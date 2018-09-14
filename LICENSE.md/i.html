@@ -1,0 +1,148 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+
+    <link href="./style.css" rel="stylesheet">
+    <title>Document</title>
+</head>
+<body>
+    <div id="map">
+        <svg id="svg"  preserveAspectRatio="none" viewBox="0 0 3100 3100" width="100%" height="100%">
+            <symbol id="bird">
+                <path d="M60.00000000,25.98076211,45.00000000,-0.00000000,15.00000000,0.00000000,0.00000000,25.98076211,15.00000000,51.96152423,45.00000000,51.96152423z"></path>
+            </symbol>
+        </svg>
+
+    </div>
+<script type="text/javascript" src="./hexagon.js"></script>
+
+</body>
+
+<style>
+    /*  Структура */
+
+    #map{
+        /*transform: perspective(1200px) rotateX(60deg);*/
+    }
+
+    #map > div:nth-child(2n-1){
+
+    }
+
+    #map > div:nth-child(2n){
+        margin-left: 45.5px;
+        margin-top: -25px;
+        margin-bottom: -25px;
+    }
+
+    #map>div:after{
+        content: "&nbsp;";
+        display: block;
+        clear: both;
+        visibility: hidden;
+        height: 0;
+        line-height: 0;
+    }
+
+    #map>div{
+        width: 100%;
+    }
+
+    svg {
+        display: block;
+    }
+
+    svg path{
+        fill:#44b744;
+        /*fill: url(#pattern);*/
+        position: relative;
+        top: 0px;
+        transition: all 0.3s ease-in-out;
+    }
+
+    svg path:hover{
+        position: relative;
+        top: -10px;
+        filter: drop-shadow( 0px 25px 20px rgba(0,0,0,0.6) );
+    }
+
+    svg path:hover {
+        fill:#78e078;
+        cursor: pointer;
+
+    }
+
+    path{
+        fill: #44b744;
+        transition: all 0.3s ease-in-out;
+    }
+
+    body{
+        background: #f1f1f1;
+        font-family: 'Roboto', sans-serif;
+        color: dimgrey;
+    }
+    #page{
+        width: 980px;
+        margin: 0 auto;
+    }
+
+    section{
+        overflow: hidden;
+        border-radius: 4px;
+        background: #fff;
+        box-shadow: 0 1px 3px rgba(0,0,0,0.12), 0 1px 2px rgba(0,0,0,0.24);
+        margin: 25px 0;
+    }
+
+    section img{
+        width: 100%;
+    }
+
+    .block{
+        width: 100px;
+        float: left;
+        height: 100px;
+        background: #2f90d5;
+        margin: 10px;
+        cursor: pointer;
+    }
+    .block:hover{
+        background: #3a9be0;
+    }
+    .section-head{
+        border-bottom: 1px solid #e6e6e6;
+        padding: 10px;
+    }
+    .section-content{
+        padding: 10px;
+        display: flex;
+        justify-content: center;
+    }
+
+    /*  Ховеры */
+
+    .z-0, .z-1, .z-2, .z-3, .z-4, .z-5 {transition: all 0.3s ease-in-out;}
+    .z-0 {box-shadow: 0 0 0 0;}
+    .z-1 {box-shadow: 0 1px 3px rgba(0,0,0,0.12), 0 1px 2px rgba(0,0,0,0.24);}
+    .z-2 {box-shadow: 0 3px 6px rgba(0,0,0,0.16), 0 3px 6px rgba(0,0,0,0.23)}
+    .z-3 {box-shadow: 0 10px 20px rgba(0,0,0,0.19), 0 6px 6px rgba(0,0,0,0.23)}
+    .z-4 {box-shadow: 0 10px 20px rgba(0,0,0,0.19), 0 6px 6px rgba(0,0,0,0.23)}
+    .z-5 {box-shadow: 0 14px 28px rgba(0,0,0,0.25), 0 10px 10px rgba(0,0,0,0.22)}
+
+    .hz-0:hover{box-shadow: 0 0 0 0;}
+    .hz-1:hover {box-shadow: 0 3px 6px rgba(0,0,0,0.16), 0 3px 6px rgba(0,0,0,0.23)}
+    .hz-2:hover {box-shadow: 0 10px 20px rgba(0,0,0,0.19), 0 6px 6px rgba(0,0,0,0.23)}
+    .hz-3:hover {box-shadow: 0 10px 20px rgba(0,0,0,0.19), 0 6px 6px rgba(0,0,0,0.23)}
+    .hz-4:hover {box-shadow: 0 14px 28px rgba(0,0,0,0.25), 0 10px 10px rgba(0,0,0,0.22)}
+    .hz-5:hover {box-shadow: 0 19px 38px rgba(0,0,0,0.30), 0 15px 12px rgba(0,0,0,0.22)}
+
+    .hz-0:active, .hz-1:active, .hz-2:active, .hz-3:active, .hz-4:active, .hz-5:active{box-shadow: 0 0 0 0;transition: all 0.15s ease-in-out;}
+
+
+
+</style>
+
+
+</html>
